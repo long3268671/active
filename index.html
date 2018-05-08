@@ -2,11 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>active</title>
+    <script>
+      (function(doc,win){var htmlFont = function(){var docEl = doc.documentElement,l = docEl.clientWidth,f;f = l / 18;l > 720 ? docEl.style.fontSize = 40 + "px": docEl.style.fontSize = f + "px"; };htmlFont();win.addEventListener("resize", htmlFont, false);})(document,window);
+    </script>
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <!--<script src="env.js"></script>-->
+  <!--<script src="./env.js"></script>-->
+  <script src="/env.js?v=333"></script>
+  <script src="/static/layer/layer.js"></script>
+  <script>
+    (function () {
+    window.onload = function () {
+      // var DOM = document.getElementById('firstLoading');
+      // DOM.style.display = 'none'
+      var u = navigator.userAgent;
+      var device =""; //当前设备信息
+      if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+        device = "Android"
+        localStorage.setItem('platform', 4);
+        console.log('Android')
+      } else if (u.indexOf('iPhone') > -1) {//苹果手机
+        device = "iPhone"
+        console.log('iPhone')
+        localStorage.setItem('platform', 2);
+      } else if (u.indexOf('Windows Phone') > -1) {//winphone手机
+        device = "WindowsPhone"
+        console.log('WindowsPhone')
+      }
+    }
+  })()
+  </script>
 </html>
